@@ -1,0 +1,50 @@
+<ion-view view-title="Create Account">
+  <ion-content>
+   
+    <form ng-submit="createAccount()">
+    
+  	<div class="list list-inset">
+	  <label class="item item-input">
+	    <input type="text" placeholder="Phone Number (+2547 XXXX XXX)" ng-model = "account_data.phone_no">
+	  </label>
+
+	  <label class="item item-input">
+	    <input type="text" placeholder="Location" ng-model="account_data.location">
+	  </label>
+
+	  <label class="item item-input">
+	    <input type="text" placeholder="Username" ng-model="account_data.username">
+	  </label>
+
+	  <label class="item item-input">
+	    <input type="text" placeholder="First Name" ng-model="account_data.first_name">
+	  </label>
+
+	  <label class="item item-input">
+	    <input type="text" placeholder="Last Name" ng-model="account_data.last_name">
+	  </label>
+
+	  <label class="item item-input">
+	    <input type="email" placeholder="email" ng-model="account_data.email">
+	  </label>
+
+	  <label class="item item-input">
+	    <input type="password" placeholder="password" ng-model="account_data.password">
+	  </label>
+
+	  <label class="item item-input" ng-model="account_data.password2">
+	    <input type="password" placeholder="confirm password" compare-to="account data.password" >
+	  </label>
+
+	  <label class="item">
+	   <button class="button button-block button-positive" type="submit">Submit</button>
+	   </label>	
+</div>
+</form>
+
+
+
+
+
+  </ion-content>
+</ion-view>

@@ -1,0 +1,13 @@
+<ion-view view-title="Seller Posts">
+  <ion-content>
+    <ion-list class="list card">
+      <ion-item ng-repeat="post in posts" class="item item-thumbnail item-text-wrap item item-body">
+      <h2 class="bar-subheader">{{post.fish_category.category_name}}</h1>
+      <img ng-src="{{post.fish_photo}}" ng-if="post.fish_photo.startsWith('http')">
+        <p>Price {{ post.price }} Ksh Available quantity {{post.quantity}} Kgs</p>
+        <p>Post By <strong>{{post.seller.user.username}}</strong>   -Location: {{post.seller.location}}</p> <p>{{post.date_posted}}</p>
+
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
