@@ -18,25 +18,29 @@
     </ion-header-bar>
     <ion-content>
       <ion-list>
-        <ion-item menu-close href="#/app/create-account">
+        <ion-item  class="item item-icon-left"  menu-close href="#/app/create-account">
         <i class="icon ion-person-add custom-icon"></i>
         Create Account
         </ion-item>
-        <ion-item menu-close ng-click="login()">
+        <ion-item class="item item-icon-left" menu-close ng-click="login()">
+        <i class="icon ion-android-send custom-icon"></i>
           Login
         </ion-item>
-        <ion-item menu-close href="#/app/search">
-          Search
+        <ion-item class="item item-icon-left"   menu-close href="#/app/create-post">
+         <i class="icon ion-compose custom-icon"></i>
+          Create Post
         </ion-item>
-        <ion-item menu-close href="#/app/browse">
-          Browse
-        </ion-item>
-        <ion-item menu-close href="#/app/posts">
+       
+        <ion-item class="item item-icon-left" menu-close href="#/app/posts">
+          <i class="icon ion-chatboxes custom-icon"></i>
           Posts
         </ion-item>
-         <ion-item menu-close href="#/app/contactus">
-          Contact Us
+        <ion-item class="item item-icon-left" menu-close href="#">
+        <i class="icon ion-chatbubble-working custom-icon"></i>
+        Contact Us
         </ion-item>
+
+
       </ion-list>
     </ion-content>
   </ion-side-menu>

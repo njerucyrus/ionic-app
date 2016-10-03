@@ -43,6 +43,8 @@ angular.module('starter.controllers', [])
 
 .controller('PostsCtrl', function($scope, $http) {
   $scope.posts = [];
+ 
+
   $http.get('http://localhost:8000/api/posts/').success(function(response){
    angular.forEach(response, function(response){
     console.log(response);
@@ -51,9 +53,28 @@ angular.module('starter.controllers', [])
   });
 
 })
+.controller('PostDetailCtrl', function($scope, $http){
+  $scope.post={};
+  console.log($scope.post);
+})
+
+.controller('CreatePostCtrl', function($scope, $http){
+  $scope.data = {};
+  $scope.createPost = function(){
+    $data = $scope.data;
+    var url = 'http://localhost:8000/api/create-post/';
+    $http.post(url, $data).success(function(response){
+      console.log(response.message);
+    }), error(function(error){
+      console.log("error", error);
+    });
+
+  };
+})
+
 .controller('CreateAccountCtrl', function($scope, $http){
     $scope.account_data = {};
-
+    
     $scope.createAccount = function(){
       
       $data = $scope.account_data;

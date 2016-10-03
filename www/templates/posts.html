@@ -5,7 +5,9 @@
       <h2 class="bar-subheader">{{post.fish_category.category_name}}</h1>
       <img ng-src="{{post.fish_photo}}" ng-if="post.fish_photo.startsWith('http')">
         <p>Price {{ post.price }} Ksh Available quantity {{post.quantity}} Kgs</p>
-        <p>Post By <strong>{{post.seller.user.username}}</strong>   -Location: {{post.seller.location}}</p> <p>{{post.date_posted}}</p>
+        <p>Post By <strong>{{post.seller.user.username}}</strong>   -Location: {{post.seller.location}}</p> 
+        <!-- <span am-time-ago="{{post.date_posted}} | amFromUnix"> -->
+        <span am-time-ago="message.time| amParse:'YYYY.MM.DD HH:mm:ss'"></span>
 
       </ion-item>
     </ion-list>

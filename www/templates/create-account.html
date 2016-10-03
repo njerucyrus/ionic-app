@@ -5,23 +5,23 @@
     
   	<div class="list list-inset">
 	  <label class="item item-input">
-	    <input type="text" placeholder="Phone Number (+2547 XXXX XXX)" ng-model = "account_data.phone_no">
+	    <input type="text" placeholder="Phone Number (+2547 XXXX XXX)" ng-model = "account_data.phone_no" required>
 	  </label>
 
 	  <label class="item item-input">
-	    <input type="text" placeholder="Location" ng-model="account_data.location">
+	    <input type="text" placeholder="Location" ng-model="account_data.location" required>
 	  </label>
 
 	  <label class="item item-input">
-	    <input type="text" placeholder="Username" ng-model="account_data.username">
+	    <input type="text" placeholder="Username" ng-model="account_data.username" required>
 	  </label>
 
 	  <label class="item item-input">
-	    <input type="text" placeholder="First Name" ng-model="account_data.first_name">
+	    <input type="text" placeholder="First Name" ng-model="account_data.first_name" required>
 	  </label>
 
 	  <label class="item item-input">
-	    <input type="text" placeholder="Last Name" ng-model="account_data.last_name">
+	    <input type="text" placeholder="Last Name" ng-model="account_data.last_name" required>
 	  </label>
 
 	  <label class="item item-input">
@@ -29,11 +29,11 @@
 	  </label>
 
 	  <label class="item item-input">
-	    <input type="password" placeholder="password" ng-model="account_data.password">
+	    <input type="password" placeholder="password" ng-model="account_data.password" required>
 	  </label>
 
 	  <label class="item item-input" ng-model="account_data.password2">
-	    <input type="password" placeholder="confirm password" compare-to="account data.password" >
+	    <input type="password" placeholder="confirm password" compare-to="account data.password" required>
 	  </label>
 
 	  <label class="item">
