@@ -76,7 +76,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'angularMoment'])
       views: {
         'menuContent':{
           templateUrl: 'templates/contactus.html',
-          controller: ''
+          controller: 'ContactUsCtrl'
         }
       }
     })

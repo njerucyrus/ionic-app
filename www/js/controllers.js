@@ -123,6 +123,29 @@ angular.module('starter.controllers', [])
   
 })
 
+.controller('ContactUsCtrl', function($scope, $http){
+    $scope.data = {};
+
+    
+    $scope.contatUs = function(){
+      
+
+      $data = $scope.data;
+    
+      $http.post('http://localhost:8000/api/contactus/', $data).success(function(response){
+        console.log("api response", response.message);
+        alert(response.message);
+    });
+
+
+    console.log("Sending contactus", $scope.post_data);
+  };
+  
+})
+
+
+
+
 
 .controller('Playlists', function($scope, $stateParams) {
 });
