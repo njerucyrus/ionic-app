@@ -2,30 +2,34 @@
 <ion-content>
 
     <div class="list">
-
+    <form ng-submit="createPost()" method="post">
       <label class="item item-input item-stacked-label item-select">
-      <div class="input-label">
+
+
+      <!-- <div class="input-label">
         Fish Category
       </div>
-      <select>
-        <option>Tilapia</option>
-        <option selected>Cat Fish</option>
-        <option>Omena </option>
-      </select>
-    </label>
-
-      <label class="item item-input item-stacked-label">
-        <span class="input-label">Price</span>
-        <input type="text" placeholder="price">
+      <input type="text" ng-model="post_data.fish_category">
+    </label> -->
+     
+    <label class="item item-input item-stable item-stacked-label">
+        <span class="input-label" >Fish Category</span>
+        <input type="text" placeholder="Enter category eg Tilapia" ng-model="post_data.fish_category">
       </label>
-      <label class="item item-input item-stacked-label">
-        <span class="input-label">Quantity</span>
-        <input type="number" placeholder="quantity">
-      </label>
-
-      <input type="file" name="upload"/>
-
     
+      <label class="item item-input item-stable item-stacked-label">
+        <span class="input-label" >Price</span>
+        <input type="text" placeholder="price" ng-model="post_data.price">
+      </label>
+      <label class="item item-input item-stable item-stacked-label">
+        <span class="input-label">Quantity</span>
+        <input type="number" placeholder="quantity" ng-model="post_data.quantity" >
+      </label>
+      
+    <label class="item">
+     <button class="button button-block button-positive" type="submit">Submit</button>
+    </label> 
+</form>
     
     </div>
 </ion-content>

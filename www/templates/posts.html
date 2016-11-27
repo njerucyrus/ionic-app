@@ -7,7 +7,8 @@
         <p>Price {{ post.price }} Ksh Available quantity {{post.quantity}} Kgs</p>
         <p>Post By <strong>{{post.seller.user.username}}</strong>   -Location: {{post.seller.location}}</p> 
         <!-- <span am-time-ago="{{post.date_posted}} | amFromUnix"> -->
-        <span am-time-ago="message.time| amParse:'YYYY.MM.DD HH:mm:ss'"></span>
+        <!--span am-time-ago="message.time| amParse:'YYYY.MM.DD HH:mm:ss'"></span>-->
+        <span>{{post.date_posted}}</span>
 
       </ion-item>
     </ion-list>

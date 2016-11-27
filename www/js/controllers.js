@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
+.controller('AppCtrl', function($scope, $ionicModal, $timeout, $http) {
 
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
@@ -35,9 +35,32 @@ angular.module('starter.controllers', [])
 
     // Simulate a login delay. Remove this and replace with your login
     // code if using a login system
-    $timeout(function() {
-      $scope.closeLogin();
-    }, 1000);
+    // $timeout(function() {
+    //   $scope.closeLogin();
+    // }, 1000);
+
+      $scope.feedback = [];
+      $data = $scope.loginData;
+      $http.post('http://localhost:8000/api/login/', $data).success(function(response){
+        
+        $scope.feedback.push(response);
+        console.log($scope.feedback);
+
+        if (response.status == 'success'){
+          username = response.username;
+         // alert('correct data submitted');
+          window.localStorage.setItem('username', username);
+          console.log('the local storage variable', localStorage['username']);
+          $scope.closeLogin();
+          
+        }
+        else{
+          alert('Invalid Username/ Password');
+        }
+    });
+
+
+
   };
 })
 
@@ -58,20 +81,6 @@ angular.module('starter.controllers', [])
   console.log($scope.post);
 })
 
-.controller('CreatePostCtrl', function($scope, $http){
-  $scope.data = {};
-  $scope.createPost = function(){
-    $data = $scope.data;
-    var url = 'http://localhost:8000/api/create-post/';
-    $http.post(url, $data).success(function(response){
-      console.log(response.message);
-    }), error(function(error){
-      console.log("error", error);
-    });
-
-  };
-})
-
 .controller('CreateAccountCtrl', function($scope, $http){
     $scope.account_data = {};
     
@@ -85,6 +94,31 @@ angular.module('starter.controllers', [])
 
 
     console.log("Creating account", $scope.account_data);
+  };
+  
+})
+
+.controller('CreatePostCtrl', function($scope, $http){
+    $scope.post_data = {};
+
+    
+    $scope.createPost = function(){
+      $category = $scope.post_data.fish_category;
+      $user = window.localStorage['username'];
+      $scope.post_data.username = $user;
+
+
+      
+      $data = $scope.post_data;
+      console.log("my data with username", $data);
+
+      $http.post('http://localhost:8000/api/create-post/', $data).success(function(response){
+        console.log("api response", response.message);
+        alert(response.message);
+    });
+
+
+    console.log("Creating post", $scope.post_data);
   };
   
 })
